@@ -23,7 +23,7 @@ export default function CheckoutButton() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        priceId: 'price_1PqLYkD4FvYVlZiqragerJiV',
+        priceId: 'price_1PqPa0D4FvYVlZiqPaLFb9W1',
         userId: data.user?.id,
         email: data.user?.email,
       }),

@@ -14,6 +14,9 @@ export async function POST(request: Request) {
       line_items: [
         {
           price: priceId,
+        },
+        {
+          price: 'price_1PqPDOD4FvYVlZiq5ewS4Kkt',
           quantity: 1,
         },
       ],
@@ -22,7 +25,10 @@ export async function POST(request: Request) {
       cancel_url: `${request.headers.get('origin')}/cancel`,
     });
 
-    return NextResponse.json({ id: session.id });
+    return NextResponse.json({
+      id: session.id,
+      client_secret: session.client_secret,
+    });
   } catch (error: any) {
     console.error(error);
     return NextResponse.json({ message: error.message }, { status: 500 });
